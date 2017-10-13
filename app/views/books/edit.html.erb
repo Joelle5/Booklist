@@ -1,0 +1,28 @@
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h2 class="display-3 text-center">Edit Book Details</h2>
+
+    <div class="card vertical-center" style="width: 40rem;">
+      <ul class="list-group">
+      <%= simple_form_for @book do |f| %>
+
+      <li class="form-style-2 list-group-item vertical-center text-center">  <%= f.input :title %></li>
+
+      <li class="form-style-2 list-group-item vertical-center text-center">  <%= f.input :author %></li>
+
+      <li class="form-style-2 list-group-item vertical-center text-center">  <%= f.input :genre %></li>
+
+      <li class="card vertical-center">
+      <%= f.input :read, as: :boolean, checked_value: true, unchecked_value: false %>
+      </li>
+      <li class="form-style-2 list-group-item vertical-center text-center">  <%= f.button :submit %></li>
+      <% end %>
+
+
+      </ul>
+    </div>
+  </div>
+
+
+<h3 class="text-center"><%= link_to ' = Go Back to Books = ', books_path %></h3>
+</div>
