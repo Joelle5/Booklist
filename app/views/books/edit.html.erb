@@ -18,6 +18,10 @@
       <li class="form-style-2 list-group-item vertical-center text-center">  <%= f.button :submit %></li>
       <% end %>
 
+<!--below is done if error message is done outside of the simpleforms-->
+      <% @book.errors.full_messages.each do |message| %>
+        <%= message %>
+      <% end %>
 
       </ul>
     </div>

@@ -13,12 +13,10 @@ class BooksController < ApplicationController
 
   def new
     @book = Book.new
-
   end
 
   def edit
     @book = Book.find(params[:id])
-
   end
 
   def create
@@ -45,8 +43,7 @@ class BooksController < ApplicationController
     redirect_to books_path
   end
 
-
-  private
+private
 
   def book_params
     params.require(:book).permit(:title, :author, :genre, :read)
