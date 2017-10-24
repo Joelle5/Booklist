@@ -3,7 +3,15 @@
     <h2 class="display-1 text-center"><strong>Book Introduction</strong> </h2>
 
 
-    <h3 class="display-2 text-center"><%= @book.author %> is the author of <%= @book.title %>.</h2>
+    <h3 class="display-2 text-center"><%= @book.author %> is the author of <%= @book.title %>,it is listed as Book id on your reading list.</h2>
+
+    <ul>
+    <%= simple_form_for @book.bookmarks.build, url: bookmarks_path(@book), method: :post do |f| %>
+    <li class="form-style-2 vertical-center text-center"><%= f.input :page_num %></li>
+    <li class="form-style-2 vertical-center text-center"><%= f.input :decrip %></li>
+    <li class="form-style-2 vertical-center text-center"><%= f.button :submit %></li>
+    <% end %>
+    </ul
 
 
 <h3 class="text-center"><%= link_to 'Back to Bookshelf', books_path %></h3>

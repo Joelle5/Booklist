@@ -1,3 +1,3 @@
 class Bookmark < ApplicationRecord
-  has_many :book
+  belongs_to :book
 end
